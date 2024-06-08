@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$font: 'Roboto', sans-serif;
+$mainColor: #696969;
+$titleColor: #272832;
+$backgroundColor: #ededed;
+$rowColor: #f7f7f7;
+$accentColor: #ffffff;
+$placeholderColor: #d1d1d1;
+$alternateColor: #a3a3a3;
+$secondaryColor: #666666;
+$footerColor: #c4c4c4;
+%btn {
+  color: $accentColor;
+  font-size: 17px;
+  line-height: 20px;
+  background-color: transparent;
+  padding: 17px 28px 19px;
+  border: 2px solid $accentColor;
+  cursor: pointer;
+  @media (max-width: 680px) {
+    font-size: 14px;
+    line-height: 16px;
+    padding: 7px 15px 7px;
+  }
+}
+@mixin sectionTitle($clr: $mainColor) {
+  font-size: 31px;
+  color: $clr;
+  @media (max-width: 680px) {
+    font-size: 26px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: $font;
+  font-size: 14px;
+  color: $mainColor;
+  .container {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+    .btn {
+      @extend %btn;
+    }
+    .title {
+      @include sectionTitle();
+    }
+    @media (max-width: 1024px) {
+      max-width: 90%;
+    }
+  }
+}

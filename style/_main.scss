@@ -1,0 +1,212 @@
+.main {
+  .skills {
+    background-color: $backgroundColor;
+    padding: 80px 0;
+    @media (max-width: 900px) {
+      padding: 50px 0;
+    }
+  }
+  .skills-wrapper {
+    display: grid;
+    grid-template-columns: (1fr 2fr);
+    column-gap: 10px;
+    grid-template-areas: 'skills-title skills-inner';
+    @media (max-width: 900px) {
+      display: flex;
+      flex-direction: column;
+    }
+    .skills-title {
+      grid-area: skills-title;
+      @media (max-width: 900px) {
+        margin-bottom: 20px;
+      }
+    }
+    .skills-inner {
+      grid-area: skills-inner;
+      .skills-text {
+        margin-bottom: 16px;
+      }
+      .skills-graph {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: minmax(200px, 620px);
+        row-gap: 18px;
+        grid-template-areas:
+          'web-design'
+          'responsive-design'
+          'ui-design'
+          'mobile';
+
+        .skills-item {
+          color: $secondaryColor;
+          text-transform: uppercase;
+          background-color: $rowColor;
+          position: relative;
+          &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: #d9d9d9;
+            position: absolute;
+            top: 0;
+          }
+          p {
+            padding: 12px 0 12px 18px;
+            position: relative;
+            z-index: 1;
+          }
+        }
+        .web-design {
+          grid-area: web-design;
+        }
+        .responsive-design {
+          grid-area: responsive-design;
+          &::after {
+            width: 90%;
+          }
+        }
+        .ui-design {
+          grid-area: ui-design;
+          &::after {
+            width: 70%;
+          }
+        }
+        .mobile {
+          grid-area: mobile;
+          &::after {
+            width: 40%;
+          }
+        }
+      }
+    }
+  }
+}
+.projects {
+  padding-top: 80px;
+  .projects-title {
+    @include sectionTitle(#4d4d4d);
+    margin-bottom: 33px;
+  }
+  .projects-wrapper {
+    display: grid;
+    gap: 0;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      'birds birds birds field field field field field field bridge bridge bridge'
+      'sunglasses sunglasses sunglasses sunglasses sunglasses sunglasses sand sand sand sand sand sand'
+      'people people people people beach beach beach beach lake lake lake lake'
+      'sky sky sky sky sky sky ocean ocean ocean ocean ocean ocean';
+    .projects-img {
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .birds {
+      grid-area: birds;
+    }
+    .field {
+      grid-area: field;
+    }
+    .bridge {
+      grid-area: bridge;
+    }
+    .sunglasses {
+      grid-area: sunglasses;
+    }
+    .sand {
+      grid-area: sand;
+    }
+    .people {
+      grid-area: people;
+    }
+    .beach {
+      grid-area: beach;
+    }
+    .lake {
+      grid-area: lake;
+    }
+    .sky {
+      grid-area: sky;
+    }
+    .ocean {
+      grid-area: ocean;
+    }
+  }
+}
+.form {
+  background-color: $backgroundColor;
+  padding: 80px 0 95px;
+  .form-wrapper {
+    display: grid;
+    grid-template-columns: (1fr 2fr);
+    column-gap: 10px;
+    grid-template-areas: 'form-name form-inner';
+    @media (max-width: 680px) {
+      display: flex;
+      flex-direction: column;
+    }
+    .form-name {
+      grid-area: form-name;
+      @media (max-width: 680px) {
+        margin-bottom: 30px;
+      }
+      .form-text {
+        color: $alternateColor;
+        padding-top: 35px;
+        max-width: 230px;
+        @media (max-width: 680px) {
+          max-width: 100%;
+        }
+      }
+    }
+    .form-inner {
+      .form-box {
+        grid-area: form-inner;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 2.2fr;
+        input {
+          font-size: 20px;
+          line-height: 44px;
+          padding: 7px 15px 7px;
+          border: none;
+          outline: none;
+          @media (max-width: 680px) {
+            font-size: 16px;
+            line-height: 20px;
+          }
+          &::placeholder {
+            font-size: 20px;
+            color: $placeholderColor;
+            @media (max-width: 680px) {
+              font-size: 16px;
+            }
+          }
+        }
+        input:nth-child(odd) {
+          background-color: $rowColor;
+        }
+        input:last-child {
+          position: relative;
+          &::placeholder {
+            position: absolute;
+            top: 25px;
+            @media (max-width: 680px) {
+              top: 10px;
+            }
+          }
+        }
+      }
+      .btn {
+        background-color: $placeholderColor;
+        border: none;
+        outline: none;
+        @media (max-width: 680px) {
+          padding: 12px 15px;
+        }
+      }
+    }
+  }
+}

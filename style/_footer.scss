@@ -1,0 +1,26 @@
+.footer {
+  .footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 35px 0;
+    @media (max-width: 680px) {
+      flex-direction: column;
+    }
+    .footer-logo {
+      font-size: 15px;
+      color: $footerColor;
+      @media (max-width: 680px) {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+    }
+    .footer-social {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 24px;
+      @media (max-width: 680px) {
+        justify-items: center;
+      }
+    }
+  }
+}
