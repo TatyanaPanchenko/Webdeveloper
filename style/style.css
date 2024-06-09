@@ -231,6 +231,23 @@ body .container .title {
   grid-template-columns: repeat(12, 1fr);
   grid-template-areas: "birds birds birds field field field field field field bridge bridge bridge" "sunglasses sunglasses sunglasses sunglasses sunglasses sunglasses sand sand sand sand sand sand" "people people people people beach beach beach beach lake lake lake lake" "sky sky sky sky sky sky ocean ocean ocean ocean ocean ocean";
 }
+@media (max-width: 900px) {
+  .projects .projects-wrapper {
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "birds field " "bridge sunglasses" "sand people" "beach lake" "sky ocean";
+  }
+}
+@media (max-width: 480px) {
+  .projects .projects-wrapper {
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "birds" "field" "bridge" "sunglasses" "sand" "people" "beach" "lake" "sky" "ocean";
+  }
+}
+.projects .projects-wrapper .projects-img {
+  position: relative;
+}
 .projects .projects-wrapper .projects-img img {
   width: 100%;
   height: 100%;
@@ -264,6 +281,35 @@ body .container .title {
 }
 .projects .projects-wrapper .ocean {
   grid-area: ocean;
+}
+.projects .projects-wrapper .projects-description {
+  position: absolute;
+  bottom: 0;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.09);
+  height: 61px;
+  width: 100%;
+  padding: 11px 0 13px 19px;
+}
+.projects .projects-wrapper .projects-description .projects-name {
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+@media (max-width: 680px) {
+  .projects .projects-wrapper .projects-description .projects-name {
+    font-size: 14px;
+  }
+}
+.projects .projects-wrapper .projects-description .projects-about {
+  font-family: "Arial", serif;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+@media (max-width: 680px) {
+  .projects .projects-wrapper .projects-description .projects-about {
+    font-size: 8px;
+  }
 }
 
 .form {
